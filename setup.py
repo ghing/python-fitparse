@@ -3,9 +3,9 @@ import pkg_resources
 
 import sys
 
-requires = None
+requires = ['six']
 if sys.version_info < (2, 7):
-    requires = ['argparse']
+    requires.append('argparse')
 
 version = pkg_resources.require("fitparse")[0].version
 
