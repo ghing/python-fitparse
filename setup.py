@@ -1,17 +1,17 @@
 from distutils.core import setup
+import pkg_resources
+
 import sys
-
-import fitparse
-
 
 requires = None
 if sys.version_info < (2, 7):
     requires = ['argparse']
 
+version = pkg_resources.require("fitparse")[0].version
 
 setup(
     name='fitparse',
-    version=fitparse.__version__,
+    version=version,
     description='Python library to parse ANT/Garmin .FIT files',
     author='David Cooper, Kévin Gomez',
     author_email='dave@kupesoft.com, contact@kevingomez.fr',
